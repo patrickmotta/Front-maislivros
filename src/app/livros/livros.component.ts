@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ListarLivrosService} from "./listar-livros.service";
 
 @Component({
   selector: 'app-livros',
@@ -10,45 +11,21 @@ export class LivrosComponent implements OnInit {
   livros = [
     {
       "id": 1,
-      "title": "Harry Potter",
-      "author": "J. K. Rowling"
-    },
-    {
-      "id": 2,
-      "title": "The Catcher in the Rye",
-      "author": "J. D. Salinger"
-    },{
-      "id": 1,
-      "title": "Harry Potter",
-      "author": "J. K. Rowling"
-    },
-    {
-      "id": 2,
-      "title": "The Catcher in the Rye",
-      "author": "J. D. Salinger"
-    },{
-      "id": 1,
-      "title": "Harry Potter",
-      "author": "J. K. Rowling"
-    },
-    {
-      "id": 2,
-      "title": "The Catcher in the Rye",
-      "author": "J. D. Salinger"
-    },{
-      "id": 1,
-      "title": "Harry Potter",
-      "author": "J. K. Rowling"
-    },
-    {
-      "id": 2,
-      "title": "The Catcher in the Rye",
-      "author": "J. D. Salinger"
-    }
-    ]
-  constructor() { }
+      "title": "",
+      "author": ""
+    }];
+
+  constructor(private  listarLivrosService: ListarLivrosService) { }
 
   ngOnInit(): void {
+    this.carregarLivros();
   }
 
+  carregarLivros(){
+    this.listarLivrosService.listarLivros().subscribe(value => {
+      //console.log(value);
+      this.livros = value;
+      console.log(this.livros)
+    })
+  }
 }

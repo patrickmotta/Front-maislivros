@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component'
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import {MatCardModule} from "@angular/material/card";
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

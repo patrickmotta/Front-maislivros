@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegislivroComponent } from './regislivro/regislivro.component';
 
 const routes: Routes = [
-  { path: 'home' , component: HomeComponent },
+  //{ path: 'home' , component: HomeComponent },
+  { path: '' , component: LivrosComponent },
   { path: 'livros' , component: LivrosComponent },
   { path: 'regislivro' , component: RegislivroComponent },
   { path: 'login' , component: LoginComponent }
